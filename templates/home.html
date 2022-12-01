@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <a href="{% url 'upload' %}">Upload Page</a>
+  <a href="{% url 'display' %}">Display Biostats</a>
+{% else %}
+  <p>You are not logged in.</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}
